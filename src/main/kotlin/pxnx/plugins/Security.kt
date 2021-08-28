@@ -1,16 +1,13 @@
 package pxnx.plugins
 
-import com.auth0.jwt.JWT
-import io.ktor.auth.*
-import io.ktor.util.*
-import io.ktor.client.*
-import io.ktor.locations.*
-import io.ktor.http.*
 import io.ktor.application.*
+import io.ktor.auth.*
 import io.ktor.auth.jwt.*
+import io.ktor.client.*
 import io.ktor.client.engine.cio.*
-import io.ktor.response.*
+import io.ktor.http.*
 import io.ktor.request.*
+import io.ktor.response.*
 import io.ktor.routing.*
 import pxnx.JwtService
 import pxnx.model.User
@@ -38,10 +35,7 @@ fun Application.configureSecurity() {
 
 
 
-       jwt {
-
-
-
+        jwt {
 
 
 /*           val secret = environment.config.property("jwt.secret").getString()
@@ -51,20 +45,18 @@ fun Application.configureSecurity() {
 
  */
 
-          verifier(JwtService.verifier)
-           realm = "Access to 'hello'"
-           /*       validate {
-                    val userId = it.payload.getClaim(CLAIM_USERID).asInt()
-                     val user = mongoDataHandler.finduser(userId) // 4
-                     PrincipalUser(user?.userId!!.toString())
+            verifier(JwtService.verifier)
+            realm = "Access to 'hello'"
+            /*       validate {
+                     val userId = it.payload.getClaim(CLAIM_USERID).asInt()
+                      val user = mongoDataHandler.finduser(userId) // 4
+                      PrincipalUser(user?.userId!!.toString())
 
 
 
-                 }
+                  }
 
-          *//////
-
-
+           *//////
 
 
         }
@@ -91,18 +83,18 @@ fun Application.configureSecurity() {
             // ...
 
 
-       /*
+            /*
 
 
-            val token = JWT.create()
-                .withAudience(audience)
-                .withIssuer(issuer)
-                .withClaim("username", user.username)
-                .withExpiresAt(Date(System.currentTimeMillis() + 60000))
-                .sign(Algorithm.HMAC256(secret))
-            call.respond(hashMapOf("token" to token))
+                 val token = JWT.create()
+                     .withAudience(audience)
+                     .withIssuer(issuer)
+                     .withClaim("username", user.username)
+                     .withExpiresAt(Date(System.currentTimeMillis() + 60000))
+                     .sign(Algorithm.HMAC256(secret))
+                 call.respond(hashMapOf("token" to token))
 
-        */
+             */
         }
     }
 }

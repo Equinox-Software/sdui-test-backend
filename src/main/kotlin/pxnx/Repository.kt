@@ -14,12 +14,12 @@ object Repository {
     private val client = KMongo.createClient().coroutine
     private val dbProfiles = client.getDatabase("rw-dev")
 
-    suspend fun createProfile(id:String) =
+    suspend fun createProfile(id: String) =
         dbProfiles.getCollection<UserProfile>("userProfiles").insertOne(UserProfile(id))
 
 
-
-   suspend fun getUserProfile(id: String) = dbProfiles.getCollection<UserProfile>("userProfiles").aggregate<UserProfile>(
+    suspend fun getUserProfile(id: String) =
+        dbProfiles.getCollection<UserProfile>("userProfiles").aggregate<UserProfile>(
             match(UserProfile::id eq id),
             sample(1)
         ).first()

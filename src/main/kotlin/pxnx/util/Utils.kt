@@ -1,8 +1,5 @@
 package pxnx.util
 
-import pxnx.util.EndpointMultiplicity.MULTIPLE
-import pxnx.util.EndpointMultiplicity.SINGLE
-import pxnx.util.MongoDBRepositories.Configuration.CollectionSetup.Behaviour
 import io.ktor.application.*
 import io.ktor.http.*
 import io.ktor.http.HttpMethod.Companion.Delete
@@ -17,6 +14,9 @@ import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.toList
 import org.litote.kmongo.coroutine.CoroutineDatabase
+import pxnx.util.EndpointMultiplicity.MULTIPLE
+import pxnx.util.EndpointMultiplicity.SINGLE
+import pxnx.util.MongoDBRepositories.Configuration.CollectionSetup.Behaviour
 import kotlin.collections.set
 
 @DslMarker

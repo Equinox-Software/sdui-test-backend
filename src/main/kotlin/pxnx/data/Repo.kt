@@ -47,7 +47,7 @@ interface Repo<T : Any> {
 
     suspend fun update(entry: Model): T {
         return try {
-       //     mongoCollection.updateOne (Model::id eq entry.id, entry)
+            //     mongoCollection.updateOne (Model::id eq entry.id, entry)
             mongoCollection.findOne(Model::id eq entry.id) ?: throw Exception("No item with that id exists")
         } catch (t: Throwable) {
             throw Exception("Cannot update item")

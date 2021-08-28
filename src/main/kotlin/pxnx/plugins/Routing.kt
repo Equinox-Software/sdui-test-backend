@@ -7,6 +7,7 @@ import io.ktor.locations.*
 import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.serialization.*
+import kotlinx.serialization.json.Json
 import pxnx.Repository
 
 
@@ -18,7 +19,11 @@ fun Application.configureRouting() {
     }
 
     install(ContentNegotiation) {
-        json()
+        json(Json {
+            prettyPrint = true
+            isLenient = true
+            ignoreUnknownKeys = true
+        })
     }
 
     routing {
@@ -50,7 +55,6 @@ fun Application.configureRouting() {
         get<UserProfileLocation> {
             call.getData(Repository.getUserProfile(it.id), "UserProfile with ID ${it.id} does not exist.")
         }
-
 
 
         ////////
