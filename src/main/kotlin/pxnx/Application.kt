@@ -1,6 +1,5 @@
 package pxnx
 
-
 import io.ktor.application.*
 import io.ktor.features.*
 import io.ktor.http.*
@@ -16,12 +15,14 @@ import pxnx.util.MongoDBRepositories
 fun main() {
     embeddedServer(CIO, System.getenv("PORT").toInt()) {
         //   configureSecurity()
-         // configureRouting()
+
         //    configureSerialization()
 
 
         val client = KMongo.createClient(System.getenv("MONGODB")).coroutine
         val dbProfiles = client.getDatabase("rw-dev")
+
+    //    configureRouting()
 
         install(MongoDBRepositories) {
 
@@ -31,8 +32,6 @@ fun main() {
                 collectionPath = "profile"
                 addEndpoints(HttpMethod.Post, HttpMethod.Put, HttpMethod.Delete) {
 
-
-                    addEndpoint(HttpMethod.Put) {
 
                         suspend {
                             Repository.createProfile("afefeef")
@@ -44,7 +43,7 @@ fun main() {
 
                     isAuthenticated = false
                 }
-            }
+
         }
 
 
