@@ -30,18 +30,19 @@ fun main() {
 
             collection<UserProfile>(dbProfiles) {
                 collectionPath = "profile"
-                addEndpoints(HttpMethod.Post, HttpMethod.Put, HttpMethod.Delete) {
+                addEndpoints( HttpMethod.Put) {
 
 
                         suspend {
                             Repository.createProfile("afefeef")
                         }
 
+                    isAuthenticated = false
                     }
 
 
 
-                    isAuthenticated = false
+
                 }
 
         }
