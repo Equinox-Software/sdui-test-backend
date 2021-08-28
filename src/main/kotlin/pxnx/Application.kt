@@ -16,7 +16,7 @@ import pxnx.util.MongoDBRepositories
 fun main() {
     embeddedServer(CIO, System.getenv("PORT").toInt()) {
         //   configureSecurity()
-          configureRouting()
+         // configureRouting()
         //    configureSerialization()
 
 
