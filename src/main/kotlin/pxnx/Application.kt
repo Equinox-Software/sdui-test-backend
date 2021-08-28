@@ -29,7 +29,7 @@ fun main() {
             })
         }
 
-        val client = KMongo.createClient().coroutine
+        val client = KMongo.createClient(System.getenv("MONGODB-URI")).coroutine
         val dbProfiles = client.getDatabase("rw-dev")
 
         install(MongoDBRepositories) {
