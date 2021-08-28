@@ -32,7 +32,7 @@ fun main() {
                 collectionPath = "profile"
                 addEndpoints( HttpMethod.Put) {
 
-
+print("------------------ PUT -------------------\n\n.")
                         suspend {
                             Repository.createProfile("afefeef")
                         }
