@@ -16,11 +16,11 @@ import pxnx.util.MongoDBRepositories
 fun main() {
     embeddedServer(CIO, System.getenv("PORT").toInt()) {
         //   configureSecurity()
-        //////    configureRouting()
+          configureRouting()
         //    configureSerialization()
 
 
-        val client = KMongo.createClient(System.getenv("MONGODB-URI")).coroutine
+        val client = KMongo.createClient(System.getenv("MONGODB")).coroutine
         val dbProfiles = client.getDatabase("rw-dev")
 
         install(MongoDBRepositories) {
