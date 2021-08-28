@@ -7,6 +7,7 @@ import io.ktor.request.*
 import io.ktor.serialization.*
 import io.ktor.server.cio.*
 import io.ktor.server.engine.*
+import kotlinx.serialization.json.Json
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
 import pxnx.model.UserProfile
@@ -17,6 +18,14 @@ fun main() {
         //   configureSecurity()
 
         //    configureSerialization()
+
+        install(ContentNegotiation) {
+            json(Json {
+                prettyPrint = true
+                isLenient = true
+                ignoreUnknownKeys = true
+            })
+        }
 
 
         val client = KMongo.createClient(System.getenv("MONGODB")).coroutine
