@@ -15,7 +15,7 @@ import pxnx.model.UserProfile
 import pxnx.util.MongoDBRepositories
 
 fun main() {
-    embeddedServer(CIO, System.getenv("PORT").toInt(), System.getenv("MONGO-URL")) {
+    embeddedServer(CIO, System.getenv("PORT").toInt()) {
         //   configureSecurity()
         //////    configureRouting()
         //    configureSerialization()
