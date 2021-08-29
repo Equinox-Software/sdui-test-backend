@@ -42,9 +42,9 @@ fun main() {
                 addEndpoints( HttpMethod.Put,HttpMethod.Post,HttpMethod.Get) {
 
 print("------------------ PUT -------------------\n\n.")
-                        suspend {
+                   /*     suspend {
                             Repository.createProfile("afefeef")
-                        }
+                        } */
 
                     isAuthenticated = false
                     }
