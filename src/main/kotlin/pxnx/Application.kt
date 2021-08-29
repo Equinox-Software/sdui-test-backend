@@ -39,7 +39,7 @@ fun main() {
 
             collection<UserProfile>(dbProfiles) {
                 collectionPath = "profile"
-                addEndpoints( HttpMethod.Put) {
+                addEndpoints( HttpMethod.Put,HttpMethod.Post,HttpMethod.Get) {
 
 print("------------------ PUT -------------------\n\n.")
                         suspend {
