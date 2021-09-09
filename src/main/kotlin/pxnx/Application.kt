@@ -7,12 +7,12 @@ import io.ktor.request.*
 import io.ktor.serialization.*
 import io.ktor.server.cio.*
 import io.ktor.server.engine.*
+import kk
 import kotlinx.serialization.json.Json
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
 import org.slf4j.event.Level
 import pxnx.model.UserProfile
-import pxnx.security.setUpJWT
 import pxnx.util.MongoDBRepositories
 
 fun main() {
@@ -24,7 +24,7 @@ fun main() {
         install(ContentNegotiation) {
             json(Json {
                 prettyPrint = true
-                isLenient = true
+                //   isLenient = true
                 ignoreUnknownKeys = true
             })
         }
@@ -39,7 +39,7 @@ fun main() {
 
         val dbProfiles = client.getDatabase("rw-dev")
 
-    //    configureRouting()
+        //    configureRouting()
 
         install(MongoDBRepositories) {
 
@@ -47,27 +47,29 @@ fun main() {
 
             collection<UserProfile>(dbProfiles) {
                 collectionPath = "profile"
-                addEndpoints( HttpMethod.Put,HttpMethod.Post,HttpMethod.Get) {
+                addEndpoints(HttpMethod.Put, HttpMethod.Post, HttpMethod.Get) {
 
-print("------------------ PUT -------------------\n\n.")
-                   /*     suspend {
-                            Repository.createProfile("afefeef")
-                        } */
+                    print("------------------ PUT -------------------\n\n.")
+                    /*     suspend {
+                             Repository.createProfile("afefeef")
+                         } */
 
                     isAuthenticated = false
-                    }
-
-
-
-
                 }
+
+
+            }
 
         }
 
-        setUpJWT()
+        kk()
+        //   setUpJWT()
 
 
     }.start(wait = true)
 }
+
+
+
 
 

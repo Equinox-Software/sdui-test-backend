@@ -14,7 +14,7 @@ import pxnx.model.User
 
 //import sun.security.util.KeyUtil.validate
 
-fun Application.configureSecurity() {
+fun Application.configureSecurityZZ() {
 
     install(Authentication) {
         oauth("auth-oauth-google") {
