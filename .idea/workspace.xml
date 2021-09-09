@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0128ccc-24b4-48ff-a8b1-a8caa3c1e067" name="Changes" comment="fiddling with auth">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pxnx/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/certs/jwks.json" beforeDir="false" afterPath="$PROJECT_DIR$/certs/jwks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/model/UserLogin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pxnx/model/UserLogin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/security/Security.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pxnx/security/Security.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631190010431</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fiddling with auth">
+      <created>1631191201022</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1631191201022</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

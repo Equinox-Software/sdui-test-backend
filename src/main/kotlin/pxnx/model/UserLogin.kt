@@ -4,4 +4,4 @@ import io.ktor.auth.*
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class UserLogin(val username: String, val password: String): Principal
+data class UserLogin(val username: String, val password: String)

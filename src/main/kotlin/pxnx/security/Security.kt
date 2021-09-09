@@ -65,7 +65,7 @@ fun Application.setUpJWT() {
         post("auth/login") {
             val user = call.receive<UserLogin>()
             // TODO Check username and password
-            val publicKey = jwkProvider.get("6f8856ed-9189-488f-9011-0ff4b6c18edc").publicKey
+            val publicKey = jwkProvider.get("6f8856ed-9189-488f-9011-0ff4b6c08edc").publicKey
             val keySpecPKCS8 = PKCS8EncodedKeySpec(Base64.getDecoder().decode(privateKeyString))
             val privateKey = KeyFactory.getInstance("RSA").generatePrivate(keySpecPKCS8)
             val token = JWT.create()
