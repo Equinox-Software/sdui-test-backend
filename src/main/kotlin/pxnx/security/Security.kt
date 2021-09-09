@@ -3,14 +3,23 @@ package pxnx.security
 import com.auth0.jwk.JwkProviderBuilder
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
-import io.ktor.application.*
-import io.ktor.auth.*
-import io.ktor.auth.jwt.*
-import io.ktor.http.*
-import io.ktor.http.content.*
-import io.ktor.request.*
-import io.ktor.response.*
-import io.ktor.routing.*
+import io.ktor.application.Application
+import io.ktor.application.call
+import io.ktor.application.install
+import io.ktor.auth.Authentication
+import io.ktor.auth.authenticate
+import io.ktor.auth.jwt.JWTPrincipal
+import io.ktor.auth.jwt.jwt
+import io.ktor.auth.principal
+import io.ktor.http.content.file
+import io.ktor.http.content.static
+import io.ktor.http.content.staticRootFolder
+import io.ktor.request.receive
+import io.ktor.response.respond
+import io.ktor.response.respondText
+import io.ktor.routing.get
+import io.ktor.routing.post
+import io.ktor.routing.routing
 import pxnx.model.UserLogin
 import java.io.File
 import java.security.KeyFactory
@@ -56,7 +65,7 @@ fun Application.setUpJWT() {
         post("auth/login") {
             val user = call.receive<UserLogin>()
             // TODO Check username and password
-            val publicKey = jwkProvider.get("6f8856ed-9189-488f-9011-0ff4b6c08edc").publicKey
+            val publicKey = jwkProvider.get("6f8856ed-9189-488f-9011-0ff4b6c18edc").publicKey
             val keySpecPKCS8 = PKCS8EncodedKeySpec(Base64.getDecoder().decode(privateKeyString))
             val privateKey = KeyFactory.getInstance("RSA").generatePrivate(keySpecPKCS8)
             val token = JWT.create()
@@ -76,11 +85,11 @@ fun Application.setUpJWT() {
                 call.respondText("Hello, $username! Token will expire in $expiresAt ms.")
             }
         }
-     /*   static(".well-known") {
+       static(".well-known") {
             staticRootFolder = File("certs")
             file("jwks.json")
         }
 
-      */
+
     }
 }

@@ -45,9 +45,9 @@ dependencies {
     implementation("org.litote.kmongo:kmongo-coroutine:4.2.8")
 
 
-
     implementation("io.ktor:ktor-auth:$ktor_version")
     implementation("io.ktor:ktor-auth-jwt:$ktor_version")
+
 
     implementation("at.favre.lib:bcrypt:$bcrypt_version")
 

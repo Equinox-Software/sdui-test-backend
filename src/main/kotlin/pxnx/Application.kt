@@ -10,6 +10,7 @@ import io.ktor.server.engine.*
 import kotlinx.serialization.json.Json
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
+import org.slf4j.event.Level
 import pxnx.model.UserProfile
 import pxnx.security.setUpJWT
 import pxnx.util.MongoDBRepositories
@@ -26,6 +27,11 @@ fun main() {
                 isLenient = true
                 ignoreUnknownKeys = true
             })
+        }
+
+        install(CallLogging) {
+            level = Level.INFO
+            filter { call -> call.request.path().startsWith("/") }
         }
 
 
