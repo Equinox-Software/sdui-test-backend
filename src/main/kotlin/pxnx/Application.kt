@@ -2,18 +2,12 @@ package pxnx
 
 import io.ktor.application.*
 import io.ktor.features.*
-import io.ktor.http.*
 import io.ktor.request.*
-import io.ktor.serialization.*
 import io.ktor.server.cio.*
 import io.ktor.server.engine.*
-import kk
-import kotlinx.serialization.json.Json
-import org.litote.kmongo.coroutine.coroutine
-import org.litote.kmongo.reactivestreams.KMongo
+import pxnx.security.kk
 import org.slf4j.event.Level
-import pxnx.model.UserProfile
-import pxnx.util.MongoDBRepositories
+import pxnx.security.setUpJWT
 
 fun main() {
     embeddedServer(CIO, System.getenv("PORT").toInt()) {
@@ -66,8 +60,8 @@ fun main() {
 
  */
 
-        kk()
-        //   setUpJWT()
+      //  kk()
+          setUpJWT()
 
 
     }.start(wait = true)
