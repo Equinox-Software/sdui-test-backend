@@ -23,7 +23,7 @@ fun Application.kk() {
     install(ContentNegotiation) {
         json()
     }
-    val privateKeyString = "secret"
+    val privateKeyString = "secretsecretsecretsecretsecretsecretsecretsecret"
     val issuer = "https://sdui-test-database.herokuapp.com"
     val audience = "https://sdui-test-database.herokuapp.com/hello"
     val myRealm = "realmeeee"
