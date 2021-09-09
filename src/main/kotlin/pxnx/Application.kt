@@ -36,6 +36,7 @@ fun main() {
 
 
         val client = KMongo.createClient(System.getenv("MONGODB")).coroutine
+
         val dbProfiles = client.getDatabase("rw-dev")
 
     //    configureRouting()
