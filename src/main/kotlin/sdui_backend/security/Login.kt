@@ -66,9 +66,9 @@ fun Application.configureSecurity() {
                         .sign(Algorithm.RSA256(publicKey as RSAPublicKey, privateKey as RSAPrivateKey))
                     call.respond(hashMapOf("token" to token))
                 } else if (user.username == "abc") {
-                    call.respond(BackendError(HttpStatusCode.BadRequest, "Incorrect Password."))
+                    call.respond(HttpStatusCode.BadRequest, "Incorrect Password.")
                 } else {
-                    call.respond(BackendError(HttpStatusCode.Unauthorized, "No user ${user.username} exists."))
+                    call.respond(HttpStatusCode.Unauthorized, "No user ${user.username} exists.")
                 }
             }
         }

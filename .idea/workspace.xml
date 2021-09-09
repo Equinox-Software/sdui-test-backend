@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0128ccc-24b4-48ff-a8b1-a8caa3c1e067" name="Changes" comment="Auth works.">
+    <list default="true" id="f0128ccc-24b4-48ff-a8b1-a8caa3c1e067" name="Changes" comment="incorrect auth doesn't work :(">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/model/BackendError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/model/BackendError.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -383,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631207551773</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="incorrect auth doesn't work :(">
+      <created>1631208574031</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1631208574031</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -403,7 +409,8 @@
     <MESSAGE value="fiddling with auth" />
     <MESSAGE value="fiddling with auth - prev. one worked" />
     <MESSAGE value="Auth works." />
-    <option name="LAST_COMMIT_MESSAGE" value="Auth works." />
+    <MESSAGE value="incorrect auth doesn't work :(" />
+    <option name="LAST_COMMIT_MESSAGE" value="incorrect auth doesn't work :(" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
