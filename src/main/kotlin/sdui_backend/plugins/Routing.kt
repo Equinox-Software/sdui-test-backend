@@ -1,4 +1,4 @@
-package pxnx.plugins
+package sdui_backend.plugins
 
 import io.ktor.application.*
 import io.ktor.features.*
@@ -8,7 +8,7 @@ import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.serialization.*
 import kotlinx.serialization.json.Json
-import pxnx.Repository
+import sdui_backend.Repository
 
 
 @OptIn(KtorExperimentalLocationsAPI::class)

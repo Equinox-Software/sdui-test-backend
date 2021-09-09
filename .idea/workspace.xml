@@ -5,7 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0128ccc-24b4-48ff-a8b1-a8caa3c1e067" name="Changes" comment="fiddling with auth - prev. one worked">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/security/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pxnx/security/Login.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/model/UserProfile.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/JwtService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/JwtService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/Repository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/data/Repo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/data/Repo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/model/Model.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/model/Model.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/model/RouteTokenResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/model/RouteTokenResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/model/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/model/UserLogin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/model/UserLogin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/model/UserProfile.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/plugins/Locations.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/plugins/Locations.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/plugins/Routing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/plugins/Routing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/plugins/Security.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/plugins/Security.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/plugins/Serialization.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/plugins/Serialization.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/security/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/security/Login.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/security/Security.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/security/Security.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/util/InterceptorsContainer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/util/InterceptorsContainer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/util/MongoDBRepositories.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/util/MongoDBRepositories.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/util/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/util/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pxnx/ApplicationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/sdui_backend/ApplicationTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +163,7 @@
       <method v="2" />
     </configuration>
     <configuration name="ApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pxnx.ApplicationKt" />
+      <option name="MAIN_CLASS_NAME" value="sdui_backend.ApplicationKt" />
       <module name="sdui-test-database.main" />
       <shortenClasspath name="NONE" />
       <method v="2">
@@ -359,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631194553710</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fiddling with auth - prev. one worked">
+      <created>1631194929043</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1631194929043</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

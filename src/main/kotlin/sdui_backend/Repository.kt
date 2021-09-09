@@ -1,4 +1,4 @@
-package pxnx
+package sdui_backend
 
 import org.litote.kmongo.coroutine.aggregate
 import org.litote.kmongo.coroutine.coroutine
@@ -6,7 +6,7 @@ import org.litote.kmongo.eq
 import org.litote.kmongo.match
 import org.litote.kmongo.reactivestreams.KMongo
 import org.litote.kmongo.sample
-import pxnx.model.UserProfile
+import sdui_backend.model.UserProfile
 
 
 object Repository {

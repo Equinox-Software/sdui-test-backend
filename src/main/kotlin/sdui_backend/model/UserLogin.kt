@@ -1,6 +1,5 @@
-package pxnx.model
+package sdui_backend.model
 
-import io.ktor.auth.*
 import kotlinx.serialization.Serializable
 
 @Serializable

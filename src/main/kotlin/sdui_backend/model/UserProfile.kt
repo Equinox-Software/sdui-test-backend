@@ -1,4 +1,4 @@
-package pxnx.model
+package sdui_backend.model
 
 import kotlinx.serialization.Serializable
 

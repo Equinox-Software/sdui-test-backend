@@ -1,4 +1,4 @@
-package pxnx.security
+package sdui_backend.security
 
 import com.auth0.jwk.JwkProviderBuilder
 import com.auth0.jwt.JWT
@@ -11,7 +11,7 @@ import io.ktor.http.content.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
-import pxnx.model.UserLogin
+import sdui_backend.model.UserLogin
 import java.io.File
 import java.security.KeyFactory
 import java.security.interfaces.RSAPrivateKey
@@ -20,12 +20,8 @@ import java.security.spec.PKCS8EncodedKeySpec
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-fun Application.kk() {
-    /*  install(ContentNegotiation) {
-          json()
-      }
+fun Application.configureSecurity() {
 
-     */
     val privateKeyString =
         "MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAtfJaLrzXILUg1U3N1KV8yJr92GHn5OtYZR7qWk1Mc4cy4JGjklYup7weMjBD9f3bBVoIsiUVX6xNcYIr0Ie0AQIDAQABAkEAg+FBquToDeYcAWBe1EaLVyC45HG60zwfG1S4S3IB+y4INz1FHuZppDjBh09jptQNd+kSMlG1LkAc/3znKTPJ7QIhANpyB0OfTK44lpH4ScJmCxjZV52mIrQcmnS3QzkxWQCDAiEA1Tn7qyoh+0rOO/9vJHP8U/beo51SiQMw0880a1UaiisCIQDNwY46EbhGeiLJR1cidr+JHl86rRwPDsolmeEF5AdzRQIgK3KXL3d0WSoS//K6iOkBX3KMRzaFXNnDl0U/XyeGMuUCIHaXv+n+Brz5BDnRbWS+2vkgIe9bUNlkiArpjWvX+2we"
     val issuer = "https://sdui-test-database.herokuapp.com"
@@ -69,14 +65,11 @@ fun Application.kk() {
                         .sign(Algorithm.RSA256(publicKey as RSAPublicKey, privateKey as RSAPrivateKey))
                     call.respond(hashMapOf("token" to token))
                 } else if (user.username == "abc") {
-                    call.respond(HttpStatusCode.BadRequest, "IncorrectPassword.")
+                    call.respond(HttpStatusCode.BadRequest, "Incorrect Password.")
                 } else {
-                    call.respond(HttpStatusCode.Unauthorized, "Nouserlikethisexists.")
+                    call.respond(HttpStatusCode.Unauthorized, "No user ${user.username} exists.")
                 }
-
-
             }
-
         }
         authenticate("auth-jwt") {
             get("/hello") {

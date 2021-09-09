@@ -1,8 +1,8 @@
-package pxnx
+package sdui_backend
 
 import io.ktor.http.*
 import io.ktor.server.testing.*
-import pxnx.plugins.configureRouting
+import sdui_backend.plugins.configureRouting
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

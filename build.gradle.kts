@@ -12,10 +12,10 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.5.21"
 }
 
-group = "pxnx"
+group = "sdui_backend"
 version = "0.0.1"
 application {
-    mainClass.set("pxnx.ApplicationKt")
+    mainClass.set("sdui_backend.ApplicationKt")
 }
 
 repositories {

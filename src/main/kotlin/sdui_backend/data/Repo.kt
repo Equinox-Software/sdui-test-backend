@@ -1,9 +1,9 @@
-package pxnx.data
+package sdui_backend.data
 
 
 import org.litote.kmongo.coroutine.CoroutineCollection
 import org.litote.kmongo.eq
-import pxnx.model.Model
+import sdui_backend.model.Model
 
 interface Repo<T : Any> {
     var mongoCollection: CoroutineCollection<T>

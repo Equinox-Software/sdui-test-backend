@@ -1,1 +1,1 @@
-rootProject.name = "pxnx"
+rootProject.name = "sdui_backend"

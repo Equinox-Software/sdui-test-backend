@@ -1,4 +1,4 @@
-package pxnx.plugins
+package sdui_backend.plugins
 
 import io.ktor.application.*
 import io.ktor.features.*

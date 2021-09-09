@@ -1,4 +1,4 @@
-package pxnx.util
+package sdui_backend.util
 
 import io.ktor.application.*
 import io.ktor.http.*
@@ -14,9 +14,9 @@ import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.toList
 import org.litote.kmongo.coroutine.CoroutineDatabase
-import pxnx.util.EndpointMultiplicity.MULTIPLE
-import pxnx.util.EndpointMultiplicity.SINGLE
-import pxnx.util.MongoDBRepositories.Configuration.CollectionSetup.Behaviour
+import sdui_backend.util.EndpointMultiplicity.MULTIPLE
+import sdui_backend.util.EndpointMultiplicity.SINGLE
+import sdui_backend.util.MongoDBRepositories.Configuration.CollectionSetup.Behaviour
 import kotlin.collections.set
 
 @DslMarker
