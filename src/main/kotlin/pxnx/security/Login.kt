@@ -49,7 +49,7 @@ fun Application.kk() {
     }
     routing {
 
-        post("/auth/login") {
+        post("auth/login") {
             val user = call.receive<UserLogin>()
             // Check username and password
             // ...
