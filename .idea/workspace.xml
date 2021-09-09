@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0128ccc-24b4-48ff-a8b1-a8caa3c1e067" name="Changes" comment="Auth works.">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/model/BackendError.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/security/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/security/Login.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/model/BackendError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sdui_backend/model/BackendError.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +88,7 @@
       <recent name="C:\Users\nyx\Downloads\pxnx.rw-ktor-backend-test-HEROKU\pxnx.rw-ktor-backend-test-master" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="sdui_backend.model" />
       <recent name="pxnx.model" />
     </key>
   </component>
@@ -376,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631203419499</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Auth works.">
+      <created>1631207551773</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1631207551773</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
