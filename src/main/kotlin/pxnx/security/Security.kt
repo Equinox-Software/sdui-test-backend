@@ -34,7 +34,7 @@ fun Application.setUpJWT() {
         .build()
 
     install(Authentication) {
-        jwt {
+        jwt("auth-jwt") {
             realm = myRealm
             verifier(jwkProvider, issuer) {
                 acceptLeeway(3)
@@ -68,7 +68,7 @@ fun Application.setUpJWT() {
             call.respond(hashMapOf("token" to token))
         }
 
-        authenticate {
+        authenticate("auth-jwt") {
             get("/hello") {
                 val principal = call.principal<JWTPrincipal>()
                 val username = principal!!.payload.getClaim("username").asString()
@@ -76,9 +76,11 @@ fun Application.setUpJWT() {
                 call.respondText("Hello, $username! Token will expire in $expiresAt ms.")
             }
         }
-        static(".well-known") {
+     /*   static(".well-known") {
             staticRootFolder = File("certs")
             file("jwks.json")
         }
+
+      */
     }
 }
