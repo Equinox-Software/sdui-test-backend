@@ -21,9 +21,11 @@ import java.util.*
 import java.util.concurrent.*
 
 fun Application.kk() {
-    install(ContentNegotiation) {
+  /*  install(ContentNegotiation) {
         json()
     }
+
+   */
     val privateKeyString = "MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAtfJaLrzXILUg1U3N1KV8yJr92GHn5OtYZR7qWk1Mc4cy4JGjklYup7weMjBD9f3bBVoIsiUVX6xNcYIr0Ie0AQIDAQABAkEAg+FBquToDeYcAWBe1EaLVyC45HG60zwfG1S4S3IB+y4INz1FHuZppDjBh09jptQNd+kSMlG1LkAc/3znKTPJ7QIhANpyB0OfTK44lpH4ScJmCxjZV52mIrQcmnS3QzkxWQCDAiEA1Tn7qyoh+0rOO/9vJHP8U/beo51SiQMw0880a1UaiisCIQDNwY46EbhGeiLJR1cidr+JHl86rRwPDsolmeEF5AdzRQIgK3KXL3d0WSoS//K6iOkBX3KMRzaFXNnDl0U/XyeGMuUCIHaXv+n+Brz5BDnRbWS+2vkgIe9bUNlkiArpjWvX+2we"
     val issuer = "https://sdui-test-database.herokuapp.com"
     val audience = "https://sdui-test-database.herokuapp.com/hello"
@@ -32,6 +34,7 @@ fun Application.kk() {
         .cached(10, 24, TimeUnit.HOURS)
         .rateLimited(10, 1, TimeUnit.MINUTES)
         .build()
+
     install(Authentication) {
         jwt("auth-jwt") {
             realm = myRealm
@@ -48,8 +51,8 @@ fun Application.kk() {
         }
     }
     routing {
-
-        post("auth/login") {
+route("auth"){
+        post("login") {
             val user = call.receive<UserLogin>()
             // Check username and password
             // ...
@@ -65,6 +68,7 @@ fun Application.kk() {
             call.respond(hashMapOf("token" to token))
         }
 
+}
         authenticate("auth-jwt") {
             get("/hello") {
                 val principal = call.principal<JWTPrincipal>()

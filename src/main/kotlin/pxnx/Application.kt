@@ -3,8 +3,10 @@ package pxnx
 import io.ktor.application.*
 import io.ktor.features.*
 import io.ktor.request.*
+import io.ktor.serialization.*
 import io.ktor.server.cio.*
 import io.ktor.server.engine.*
+import kotlinx.serialization.json.Json
 import pxnx.security.kk
 import org.slf4j.event.Level
 import pxnx.security.setUpJWT
@@ -15,7 +17,7 @@ fun main() {
 
         //    configureSerialization()
 
-   /*     install(ContentNegotiation) {
+       install(ContentNegotiation) {
             json(Json {
                 prettyPrint = true
                 //   isLenient = true
@@ -23,7 +25,7 @@ fun main() {
             })
         }
 
-    */
+
 
         install(CallLogging) {
             level = Level.INFO
