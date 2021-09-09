@@ -11,6 +11,7 @@ import io.ktor.http.content.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import sdui_backend.model.BackendError
 import sdui_backend.model.UserLogin
 import java.io.File
 import java.security.KeyFactory
@@ -65,9 +66,9 @@ fun Application.configureSecurity() {
                         .sign(Algorithm.RSA256(publicKey as RSAPublicKey, privateKey as RSAPrivateKey))
                     call.respond(hashMapOf("token" to token))
                 } else if (user.username == "abc") {
-                    call.respond(HttpStatusCode.BadRequest, "Incorrect Password.")
+                    call.respond(BackendError(HttpStatusCode.BadRequest, "Incorrect Password."))
                 } else {
-                    call.respond(HttpStatusCode.Unauthorized, "No user ${user.username} exists.")
+                    call.respond(BackendError(HttpStatusCode.Unauthorized, "No user ${user.username} exists."))
                 }
             }
         }
