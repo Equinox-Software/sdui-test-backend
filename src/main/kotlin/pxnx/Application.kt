@@ -11,6 +11,7 @@ import kotlinx.serialization.json.Json
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
 import pxnx.model.UserProfile
+import pxnx.security.setUpJWT
 import pxnx.util.MongoDBRepositories
 
 fun main() {
@@ -55,6 +56,8 @@ print("------------------ PUT -------------------\n\n.")
                 }
 
         }
+
+        setUpJWT()
 
 
     }.start(wait = true)
