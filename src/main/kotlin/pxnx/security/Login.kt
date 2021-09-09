@@ -23,10 +23,10 @@ fun Application.kk() {
     install(ContentNegotiation) {
         json()
     }
-    val privateKeyString = environment.config.property("jwt.privateKey").getString()
-    val issuer = environment.config.property("jwt.issuer").getString()
-    val audience = environment.config.property("jwt.audience").getString()
-    val myRealm = environment.config.property("jwt.realm").getString()
+    val privateKeyString = "secret"
+    val issuer = "https://sdui-test-database.herokuapp.com"
+    val audience = "https://sdui-test-database.herokuapp.com/hello"
+    val myRealm = "realmeeee"
     val jwkProvider = JwkProviderBuilder(issuer)
         .cached(10, 24, TimeUnit.HOURS)
         .rateLimited(10, 1, TimeUnit.MINUTES)
