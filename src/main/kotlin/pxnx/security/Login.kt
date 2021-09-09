@@ -1,32 +1,33 @@
 package pxnx.security
 
-import com.auth0.jwk.*
-import com.auth0.jwt.*
-import com.auth0.jwt.algorithms.*
+import com.auth0.jwk.JwkProviderBuilder
+import com.auth0.jwt.JWT
+import com.auth0.jwt.algorithms.Algorithm
 import io.ktor.application.*
 import io.ktor.auth.*
 import io.ktor.auth.jwt.*
-import io.ktor.features.*
+import io.ktor.http.*
 import io.ktor.http.content.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
-import io.ktor.serialization.*
 import pxnx.model.UserLogin
-import java.io.*
-import java.security.*
-import java.security.interfaces.*
-import java.security.spec.*
+import java.io.File
+import java.security.KeyFactory
+import java.security.interfaces.RSAPrivateKey
+import java.security.interfaces.RSAPublicKey
+import java.security.spec.PKCS8EncodedKeySpec
 import java.util.*
-import java.util.concurrent.*
+import java.util.concurrent.TimeUnit
 
 fun Application.kk() {
-  /*  install(ContentNegotiation) {
-        json()
-    }
+    /*  install(ContentNegotiation) {
+          json()
+      }
 
-   */
-    val privateKeyString = "MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAtfJaLrzXILUg1U3N1KV8yJr92GHn5OtYZR7qWk1Mc4cy4JGjklYup7weMjBD9f3bBVoIsiUVX6xNcYIr0Ie0AQIDAQABAkEAg+FBquToDeYcAWBe1EaLVyC45HG60zwfG1S4S3IB+y4INz1FHuZppDjBh09jptQNd+kSMlG1LkAc/3znKTPJ7QIhANpyB0OfTK44lpH4ScJmCxjZV52mIrQcmnS3QzkxWQCDAiEA1Tn7qyoh+0rOO/9vJHP8U/beo51SiQMw0880a1UaiisCIQDNwY46EbhGeiLJR1cidr+JHl86rRwPDsolmeEF5AdzRQIgK3KXL3d0WSoS//K6iOkBX3KMRzaFXNnDl0U/XyeGMuUCIHaXv+n+Brz5BDnRbWS+2vkgIe9bUNlkiArpjWvX+2we"
+     */
+    val privateKeyString =
+        "MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAtfJaLrzXILUg1U3N1KV8yJr92GHn5OtYZR7qWk1Mc4cy4JGjklYup7weMjBD9f3bBVoIsiUVX6xNcYIr0Ie0AQIDAQABAkEAg+FBquToDeYcAWBe1EaLVyC45HG60zwfG1S4S3IB+y4INz1FHuZppDjBh09jptQNd+kSMlG1LkAc/3znKTPJ7QIhANpyB0OfTK44lpH4ScJmCxjZV52mIrQcmnS3QzkxWQCDAiEA1Tn7qyoh+0rOO/9vJHP8U/beo51SiQMw0880a1UaiisCIQDNwY46EbhGeiLJR1cidr+JHl86rRwPDsolmeEF5AdzRQIgK3KXL3d0WSoS//K6iOkBX3KMRzaFXNnDl0U/XyeGMuUCIHaXv+n+Brz5BDnRbWS+2vkgIe9bUNlkiArpjWvX+2we"
     val issuer = "https://sdui-test-database.herokuapp.com"
     val audience = "https://sdui-test-database.herokuapp.com/hello"
     val myRealm = "realmeeee"
@@ -51,24 +52,32 @@ fun Application.kk() {
         }
     }
     routing {
-route("auth"){
-        post("login") {
-            val user = call.receive<UserLogin>()
-            // Check username and password
-            // ...
-            val publicKey = jwkProvider.get("6f8856ed-9189-488f-9011-0ff4b6c08edc").publicKey
-            val keySpecPKCS8 = PKCS8EncodedKeySpec(Base64.getDecoder().decode(privateKeyString))
-            val privateKey = KeyFactory.getInstance("RSA").generatePrivate(keySpecPKCS8)
-            val token = JWT.create()
-                .withAudience(audience)
-                .withIssuer(issuer)
-                .withClaim("username", user.username)
-                .withExpiresAt(Date(System.currentTimeMillis() + 60000))
-                .sign(Algorithm.RSA256(publicKey as RSAPublicKey, privateKey as RSAPrivateKey))
-            call.respond(hashMapOf("token" to token))
-        }
+        route("auth") {
+            post("login") {
+                val user = call.receive<UserLogin>()
+                // TODO Check username and password
 
-}
+                if (user.username == "abc" && user.password == "123") {
+                    val publicKey = jwkProvider.get("6f8856ed-9189-488f-9011-0ff4b6c08edc").publicKey
+                    val keySpecPKCS8 = PKCS8EncodedKeySpec(Base64.getDecoder().decode(privateKeyString))
+                    val privateKey = KeyFactory.getInstance("RSA").generatePrivate(keySpecPKCS8)
+                    val token = JWT.create()
+                        .withAudience(audience)
+                        .withIssuer(issuer)
+                        .withClaim("username", user.username)
+                        .withExpiresAt(Date(System.currentTimeMillis() + 60000))
+                        .sign(Algorithm.RSA256(publicKey as RSAPublicKey, privateKey as RSAPrivateKey))
+                    call.respond(hashMapOf("token" to token))
+                } else if (user.username == "abc") {
+                    call.respond(HttpStatusCode.BadRequest, "IncorrectPassword.")
+                } else {
+                    call.respond(HttpStatusCode.Unauthorized, "Nouserlikethisexists.")
+                }
+
+
+            }
+
+        }
         authenticate("auth-jwt") {
             get("/hello") {
                 val principal = call.principal<JWTPrincipal>()
