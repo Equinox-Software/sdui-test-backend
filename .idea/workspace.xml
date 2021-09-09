@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0128ccc-24b4-48ff-a8b1-a8caa3c1e067" name="Changes" comment="fiddling with auth">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/pxnx/security/Login.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pxnx/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/plugins/Security.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pxnx/plugins/Security.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +282,28 @@
       <option name="project" value="LOCAL" />
       <updated>1631191502295</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fiddling with auth">
+      <created>1631192757657</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1631192757657</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fiddling with auth">
+      <created>1631192807374</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1631192807374</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fiddling with auth">
+      <created>1631192948259</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1631192948259</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

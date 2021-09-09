@@ -21,13 +21,15 @@ fun main() {
 
         //    configureSerialization()
 
-        install(ContentNegotiation) {
+   /*     install(ContentNegotiation) {
             json(Json {
                 prettyPrint = true
                 //   isLenient = true
                 ignoreUnknownKeys = true
             })
         }
+
+    */
 
         install(CallLogging) {
             level = Level.INFO
