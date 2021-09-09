@@ -34,7 +34,7 @@ fun main() {
             filter { call -> call.request.path().startsWith("/") }
         }
 
-
+/*
         val client = KMongo.createClient(System.getenv("MONGODB")).coroutine
 
         val dbProfiles = client.getDatabase("rw-dev")
@@ -61,6 +61,8 @@ fun main() {
             }
 
         }
+
+ */
 
         kk()
         //   setUpJWT()
