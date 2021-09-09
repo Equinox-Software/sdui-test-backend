@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0128ccc-24b4-48ff-a8b1-a8caa3c1e067" name="Changes" comment="fiddling with auth">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pxnx/Application.kt" afterDir="false" />
+    <list default="true" id="f0128ccc-24b4-48ff-a8b1-a8caa3c1e067" name="Changes" comment="fiddling with auth - prev. one worked">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/security/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pxnx/security/Login.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pxnx/security/Security.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pxnx/security/Security.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +324,21 @@
       <option name="project" value="LOCAL" />
       <updated>1631193489847</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fiddling with auth - prev. one worked">
+      <created>1631193814649</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1631193814649</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fiddling with auth - prev. one worked">
+      <created>1631193989834</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1631193989834</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -344,7 +356,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fiddling" />
     <MESSAGE value="fiddling with auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="fiddling with auth" />
+    <MESSAGE value="fiddling with auth - prev. one worked" />
+    <option name="LAST_COMMIT_MESSAGE" value="fiddling with auth - prev. one worked" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
